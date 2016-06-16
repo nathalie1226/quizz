@@ -26,102 +26,83 @@ function testMyAge (){
     console.log(sum);
 
 }
-function testMyColor (){
-    var color=document.getElementById("favColor").value;
-    switch(color.toUpperCase()){
-        case 'PINK':
-            sum=sum+1;
-            break;
-        case 'RED':
-            sum=sum+2;
-            break;
-        case 'BLACK':
-            sum=sum+3;
-            break;
-        case 'YELLOW GOLD':
-            sum=sum+4;
-            break;
+function testMyColor () {
+    var color = document.getElementsByClassName("favColor")[0].value;
+    console.log(color);
+    var answerValues = {"PINK": 1, "RED": 2, "BLACK":3, "YELLOW GOLD":4};
+    if (color.toUpperCase() in answerValues) {
+        sum += answerValues[color.toUpperCase()];
+       console.log( sum);
     }
 
-console.log(sum);
 
 }
+
+
 
 function isChecked(){
-
-    if (document.getElementById("island").checked){
-        sum=sum+1;
+    var vacGroup=document.getElementsByClassName("vacay");
+    for (var i=0; i < vacGroup.length; i++) {
+        var btn = vacGroup[i];
+        if (btn.checked) {
+            console.log("works");
+            sum = sum + parseInt(btn.value);
+        }
     }
-    if (document.getElementById("world").checked){
-        sum=sum+2;
-    }
-    if (document.getElementById("cottage").checked){
-        sum=sum+3;
-    }
-     if (document.getElementById("germany").checked){
-        sum=sum+4;
-    }
-
-    console.log(sum);
 }
+
+
 
 
 
 function isChosen(){
-
-    if (document.getElementById("villain").value === "bambi (i hate villains)"){
-        sum=sum+1;
+    var evilGroup=document.getElementsByClassName("evil");
+    for (var i=0; i < evilGroup.length; i++) {
+        var btn = evilGroup[i];
+        if (btn.selected) {
+            sum = sum + parseInt(btn.value);
+        }
+        console.log(sum);
     }
-    else if (document.getElementById("villain").value === "The dragon in sleeping beauty"){
-        sum=sum+2;
-    }
-    else if (document.getElementById("villain").value === "jafar (alladin)"){
-        sum=sum+3;
-    }
-    else if (document.getElementById("villain").value === "scar (the lion king)"){
-        sum=sum+4;
-    }
-
-    console.log(sum);
 }
+
+
 
 function isRadioChecked(){
-
-    if (document.getElementById("beauty").checked){
-        sum=sum+1;
+    var wordGroup=document.getElementsByClassName("favWord");
+    for (var i=0; i < wordGroup.length; i++) {
+        var btn = wordGroup[i];
+        if (btn.checked) {
+            sum = sum + parseInt(btn.value);
+        }
+        console.log(sum);
     }
-    if (document.getElementById("loyal").checked){
-        sum=sum+2;
-    }
-    if (document.getElementById("fight").checked){
-        sum=sum+3;
-    }
-    if (document.getElementById("power").checked){
-        sum=sum+4;
-    }
-
-    console.log(sum);
 }
 
-function isButtonClicked(){
 
-    if (document.getElementById("wealth").checked){
-        sum=sum+1;
+function isButtonClicked() {
+    var radioGroup = document.getElementsByClassName("important");
+    for (var i=0; i < radioGroup.length; i++) {
+        var btn = radioGroup[i];
+        if (btn.checked) {
+            sum = sum + parseInt(btn.value);
+        }
+        console.log(sum);
     }
-    else if (document.getElementById("health").checked){
-        sum=sum+2;
-    }
-    else if (document.getElementById("honor").checked){
-        sum=sum+3;
-    }
-    else if (document.getElementById("winning").checked){
-        sum=sum+4;
-    }
+}
 
-    console.log(sum);
+
+function checkSum(){
+    testMyAge();
+    testMyColor();
+    isChecked();
+    isChosen();
+    isRadioChecked();
+    isButtonClicked()
 }
 
 function checkScore(){
+    checkSum();
     if (sum>0 && sum<11){
         document.querySelector("div.score").innerHTML="<h1>You are Kim Kardashian </h1> " +
             "<img src='./kim.jpg'>"+
@@ -155,3 +136,4 @@ function checkScore(){
     }
 
 }
+
