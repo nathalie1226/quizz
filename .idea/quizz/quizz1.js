@@ -111,14 +111,14 @@ function checkScore(){
             "hard to gain.You do not mind people knowing your every move and you actually like to be the center of attention"+
             "</p>";
     }
-    else if (sum>11 && sum<16){
+    else if (sum>=11 && sum<16){
         document.querySelector("div.score").innerHTML="<h1>You are Adam Levine </h1> <br>" +
             "<img src='./adam.jpg'>"+
             "<p>" +
             "you love nice things and you have a passion for music."+
             "</p>";
     }
-    else if (sum>16 && sum<20) {
+    else if (sum>=16 && sum<20) {
         document.querySelector("div.score").innerHTML = "<h1>You are Daniel Craig </h1> <br>" +
             "<img src='./jamesbond.jpg'>"+
             "<p>" +
