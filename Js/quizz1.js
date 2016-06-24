@@ -2,10 +2,7 @@
  * Created by itc_user on 6/15/2016.
  */
 
-function sayMyName (){
-    var fname=document.getElementById("firstName").value;
-    alert("hello "+fname+ " Welcome to our quizz");
-}
+
 
 var sum=0;
 function testMyAge (){
@@ -23,36 +20,30 @@ function testMyAge (){
         sum=sum+4;
     }
      
-    console.log(sum);
+
 
 }
 function testMyColor () {
     var color = document.getElementsByClassName("favColor")[0].value;
-    console.log(color);
     var answerValues = {"PINK": 1, "RED": 2, "BLACK":3, "YELLOW GOLD":4};
     if (color.toUpperCase() in answerValues) {
         sum += answerValues[color.toUpperCase()];
-       console.log( sum);
+
     }
 
 
 }
 
 
-
-function isChecked(){
-    var vacGroup=document.getElementsByClassName("vacay");
+function isChecked(className){
+    var vacGroup=document.getElementsByClassName(className);
     for (var i=0; i < vacGroup.length; i++) {
         var btn = vacGroup[i];
         if (btn.checked) {
-            console.log("works");
             sum = sum + parseInt(btn.value);
         }
     }
 }
-
-
-
 
 
 function isChosen(){
@@ -62,65 +53,42 @@ function isChosen(){
         if (btn.selected) {
             sum = sum + parseInt(btn.value);
         }
-        console.log(sum);
     }
 }
 
 
-
-function isRadioChecked(){
-    var wordGroup=document.getElementsByClassName("favWord");
-    for (var i=0; i < wordGroup.length; i++) {
-        var btn = wordGroup[i];
-        if (btn.checked) {
-            sum = sum + parseInt(btn.value);
-        }
-        console.log(sum);
-    }
-}
-
-
-function isButtonClicked() {
-    var radioGroup = document.getElementsByClassName("important");
-    for (var i=0; i < radioGroup.length; i++) {
-        var btn = radioGroup[i];
-        if (btn.checked) {
-            sum = sum + parseInt(btn.value);
-        }
-        console.log(sum);
-    }
-}
 
 
 function checkSum(){
     testMyAge();
     testMyColor();
-    isChecked();
+    isChecked("vacay");
     isChosen();
-    isRadioChecked();
-    isButtonClicked()
+    isChecked("favWord");
+    isChecked("important");
+
 }
 
 function checkScore(){
     checkSum();
     if (sum>0 && sum<11){
         document.querySelector("div.score").innerHTML="<h1>You are Kim Kardashian </h1> " +
-            "<img src='./kim.jpg'>"+
+            "<img src='../IMAGES/kim.jpg'>"+
             "<p>" +
             "You are a very hard worker and you love to shop and spend the money you worked so " +
             "hard to gain.You do not mind people knowing your every move and you actually like to be the center of attention"+
             "</p>";
     }
-    else if (sum>=11 && sum<16){
+    else if (sum>11 && sum<16){
         document.querySelector("div.score").innerHTML="<h1>You are Adam Levine </h1> <br>" +
-            "<img src='./adam.jpg'>"+
+            "<img src='../IMAGES/adam.jpg'>"+
             "<p>" +
             "you love nice things and you have a passion for music."+
             "</p>";
     }
-    else if (sum>=16 && sum<20) {
+    else if (sum>16 && sum<20) {
         document.querySelector("div.score").innerHTML = "<h1>You are Daniel Craig </h1> <br>" +
-            "<img src='./jamesbond.jpg'>"+
+            "<img src='../IMAGES/jamesbond.jpg'>"+
             "<p>" +
             "You are a quiet very smart and strong personYou have all the qualities to be an amazing spy You probably speak more than one langage"+
             "</p>" ;
@@ -128,12 +96,12 @@ function checkScore(){
     else {
 
         document.querySelector("div.score").innerHTML = "<h1>You are Donald Trump </h1> <br>" +
-            "<img src='./trump.jpg'>"+
+            "<img src='../IMAGES/trump.jpg'>"+
             "<p>" +
             "You are very oppinionated and love to share your opinions with others? Your hair looks amazing!"+
             "</p>" ;
 
     }
-
+    document.getElementById("lightbox").style.display = "block";
 }
 

@@ -2,37 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="quizz1.css">
+    <title>Amazing quizz</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/quizz1.css">
 </head>
 <body>
-<img class="quizz" src="quiz.jpg">
+<img class="quizz" src="../IMAGES/quiz.jpg" alt="quizzlogo">
 <h1>Which celebrity are you?</h1>
 
-<p>First let's get to know you...</p>
-<label for="firstName">First Name</label>
-<input type="text" id='firstName' placeholder="First Name">
-<span><button id="button0" onclick="sayMyName();">Submit</button></span>
-<br>
-<br>
-<br>
-<p>Now let's start playing</p>
-<img class="play" src="quizz2.jpg">
-<br>
-<br>
-<div class="score"></div>
+
+<div id="lightbox" style="display:none">
+    <div class= score id="message"></div>
+</div>
+
+<p> Let's start playing</p>
+<img class="play" src="../IMAGES/quizz2.jpg" alt="coolImage">
 <br>
 <label for="age">How old are you?</label>
 <input class="fage" type="number" id='age' placeholder="Age">
 
 <br>
 <br>
-<label for="color">What is your favourite color between pink, red,black and yellow gold?</label>
+<label >What is your favourite color between pink, red,black and yellow gold?</label>
 <input class="favColor" type="text" placeholder="Your favourite color">
 
 
 <div><br>
-    <label for="vac">What is your favourite vacation spot?</label>
+    <label >What is your favourite vacation spot?</label>
     <br>
     <input class="vacay" type="checkbox" name="option1" id="island" value="1"> any island in the caribbean<br>
     <input class="vacay" type="checkbox" name="option2" id="world" value="2">you love to travel all over the world<br>
@@ -54,7 +49,7 @@
 
 </div>
 <div><br>
-    <label for="Word">Which of these words describes you the best?</label>
+    <label >Which of these words describes you the best?</label>
     <br>
     <input type="radio" class="favWord" name="option" id="beauty" value="1"> beautiful<br>
     <input type="radio" class="favWord" name="option" id="loyal" value="2">loyal<br>
@@ -64,7 +59,7 @@
 </div>
 
 <div><br>
-    <label for="need">What is the most important to you?</label>
+    <label >What is the most important to you?</label>
     <br>
     <input type="radio" class="important" name="option2" id="wealth" value="1">wealth <br>
     <input type="radio" class="important" name="option2" id="health" value="2">health<br>
@@ -77,7 +72,7 @@
 <span><button id="button6" onclick="checkScore();">Check your score</button></span>
 
 
-<script src="quizz1.js"></script>
+<script src="../Js/quizz1.js"></script>
 
 </body>
 </html>
