@@ -12,17 +12,18 @@ img.quizz {
 
     display: block;
     position: fixed;
-    width: 100%;
+    width: 150%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
     z-index: 123;
+
 
 }
 #message{
     display: inline-block;
     position: absolute;
-    left: 50%;
-    top: 10%;
+    left: 33%;
+    top: -10%;
     z-index: 4;
     transform: translateX(-50%) translateY(-50%);
     background-color: white;
